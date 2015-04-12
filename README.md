@@ -1,3 +1,21 @@
+#由于原版本上支持中文，并能生成txt格式。
+
+```js
+var wikipedia = require("wikipedia-js");
+var query = "丽江";
+    // if you want to retrieve a full article set summaryOnly to false.
+    // Full article retrieval and parsing is still beta
+  var options = {query: query, format: "txt", summaryOnly: true}; //转成txt格式。
+  wikipedia.searchArticle(options, function(err, htmlWikiText){
+    if(err){
+      console.log("An error occurred[query=%s, error=%s]", query, err);
+      return;
+    }
+  console.log(htmlWikiText);
+});
+
+```
+
 # wikipedia-js [![Build Status](https://travis-ci.org/kenshiro-o/wikipedia-js.png?branch=master)](https://travis-ci.org/kenshiro-o/wikipedia-js)
 
   wikipedia-js is a simple client that enables you to query Wikipedia articles in english. 
