@@ -1,5 +1,5 @@
 var wikipedia = require("../lib/wikiClient");//require("wikipedia-js");
-    var query = "丽江";
+    var query = "帝国时代";
     // if you want to retrieve a full article set summaryOnly to false.
     // Full article retrieval and parsing is still beta
     var options = {query: query, format: "txt", summaryOnly: true};
