@@ -8,7 +8,14 @@ var wikipedia = require("../lib/wikiClient");//require("wikipedia-js");
         console.log("An error occurred[query=%s, error=%s]", query, err);
         return;
       }
-      console.log(htmlWikiText);
+      else{
+        if(htmlWikiText==null){
+          console.log('没有找到任何内容');
+        }
+        else
+          console.log(htmlWikiText);
+      }
+      
       //console.log("Query successful[query=%s, html-formatted-wiki-text=%s]", query, htmlWikiText);
       /*You should see something along the lines of:
         <p><strong>Napoleon Bonaparte</strong> (French: Napoléon Bonaparte [napoleɔ̃ bɔnɑpaʁt], Italian: Napoleone Buonaparte; 15 August 1769&nbsp;– 5 May 1821) was a French military and political leader who rose to prominence during the latter stages of the <a href=http://en.wikipedia.org/French_Revolution">French Revolution</a> and its associated <a href=http://en.wikipedia.org/French_Revolutionary_Wars">wars</a> in Europe.</p>
