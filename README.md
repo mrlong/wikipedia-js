@@ -16,6 +16,29 @@ var query = "丽江";
 
 ```
 
+#增加 query.search 功能。
+```js
+    var options = {query: '虎跳', format: "json", summaryOnly: true/*,srprop:''*/};  //有srprop："" 表示明细提取。
+    wikipedia.searchTxt(options, function(err, html){
+      if(err){
+        console.log("An error occurred[query=%s, error=%s]", query, err);
+        return;
+      }
+      else{
+        if(html==null){
+          console.log('没有找到任何内容');
+        }
+        else
+          
+          //console.log(html);
+          var jsonData = JSON.parse(html);
+          console.log(jsonData.query.search);
+      }
+      
+      
+    });
+```
+
 # wikipedia-js [![Build Status](https://travis-ci.org/kenshiro-o/wikipedia-js.png?branch=master)](https://travis-ci.org/kenshiro-o/wikipedia-js)
 
   wikipedia-js is a simple client that enables you to query Wikipedia articles in english. 
